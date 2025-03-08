@@ -17,7 +17,7 @@ return jsonify({"message": "File uploaded successfully" , "file_path":file_path}
 @app.route("/download/<filename>",methods=["GET"])
 def download_video(filename):
  file_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-if no os.path.exists(file_path):
+if not os.path.exists(file_path):
  return jsonify({"error": "File not Found"}) , 404
 return send_file(file_path, as_attachment=True)
 if_name_ == "_main_":
